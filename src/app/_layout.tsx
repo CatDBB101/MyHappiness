@@ -1,18 +1,35 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import { Tabs } from "expo-router";
+import { NotebookIcon, Smiley } from "phosphor-react-native";
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
-
-SplashScreen.preventAutoHideAsync();
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
-  );
+export default function RootLayout() {
+    return (
+        <Tabs>
+            <Tabs.Screen
+                name="today"
+                options={{
+                    title: "Today Happiness",
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Smiley
+                            color={color.toString()}
+                            size={size}
+                            weight={focused ? "fill" : "regular"}
+                        />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="diary"
+                options={{
+                    title: "My Happiness Diary",
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <NotebookIcon
+                            color={color.toString()}
+                            size={size}
+                            weight={focused ? "fill" : "regular"}
+                        />
+                    ),
+                }}
+            />
+        </Tabs>
+    );
 }
