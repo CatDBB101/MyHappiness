@@ -90,7 +90,7 @@ export default function Today() {
                             <View style={styles.happinessBox} key={index}>
                                 <Text
                                     style={styles.happinessBoxText}
-                                >{`${index + 1} - ${happy.happy}`}</Text>
+                                >{`${index + 1}.${happy.happy}`}</Text>
                                 <TouchableOpacity
                                     style={styles.happinessLeave}
                                     onPress={() => {
