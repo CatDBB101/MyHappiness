@@ -3,7 +3,7 @@ import { NotebookIcon, Smiley } from "phosphor-react-native";
 
 export default function RootLayout() {
     return (
-        <Tabs>
+        <Tabs screenOptions={{}}>
             <Tabs.Screen
                 name="today"
                 options={{
