@@ -3,6 +3,7 @@ import {
     rawHappiness,
     saveHappiness,
 } from "@/services/diarySave";
+import moment from "moment";
 import { LeafIcon, SmileyIcon } from "phosphor-react-native";
 import { useEffect, useState } from "react";
 import {
@@ -79,10 +80,8 @@ export default function Today() {
             <ScrollView style={styles.happinessContainer}>
                 {happiness
                     // filter just today happiness
-                    .filter(
-                        (happy) =>
-                            new Date(happy.timestamp).toDateString() ===
-                            new Date().toDateString(),
+                    .filter((happy) =>
+                        moment(happy.timestamp).isSame(moment(), "date"),
                     )
                     // display
                     .map((happy, index) => {

@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
         // backgroundColor: "red",
     },
     calendarContainer: {
-        height: "65%",
+        flex: 1.7,
         padding: 10,
         backgroundColor: "#c8c8c8",
         // backgroundColor: "red",
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     calendarCol: {
-        height: 50,
+        height: "11%",
 
         flexDirection: "row",
         flexWrap: "wrap",
@@ -302,10 +302,11 @@ const styles = StyleSheet.create({
         textAlign: "center",
         textAlignVertical: "center",
 
-        fontSize: 18,
+        fontSize: 15,
     },
     happinessContainer: {
-        height: "45%",
+        flex: 1,
+        // height: "5%",
 
         padding: 15,
     },
