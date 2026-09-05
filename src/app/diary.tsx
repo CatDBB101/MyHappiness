@@ -1,4 +1,5 @@
 import { loadHappiness, rawHappiness } from "@/services/diarySave";
+import getStreak from "@/services/streak";
 import { useIsFocused } from "expo-router";
 import moment from "moment";
 import { CaretLeftIcon, CaretRightIcon } from "phosphor-react-native";
@@ -24,10 +25,16 @@ export default function Diary() {
     const [month, setMonth] = useState<number>(0);
     const [year, setYear] = useState<number>(0);
 
+    // streak
+    const [streak, setStreak] = useState<number>(0);
+
     useEffect(() => {
         async function init() {
             const _happiness = await loadHappiness();
             setHappiness(_happiness);
+
+            const _streak = await getStreak();
+            setStreak(_streak);
 
             const presentDay = moment().date();
             setDay(presentDay);
@@ -110,7 +117,9 @@ export default function Diary() {
     return (
         <View style={styles.container}>
             <View style={styles.calendarContainer}>
-                <Text style={styles.streakText}>เธอเขียนมา - วันแล้วนะ</Text>
+                <Text style={styles.streakText}>
+                    เธอเขียนมา {streak} วันแล้วนะ
+                </Text>
                 <View style={styles.calendar}>
                     {/* month header */}
                     <View style={styles.monthBar}>
