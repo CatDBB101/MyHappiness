@@ -5,7 +5,7 @@ export default function RootLayout() {
     return (
         <Tabs screenOptions={{}}>
             <Tabs.Screen
-                name="today"
+                name="index"
                 options={{
                     title: "Today Happiness",
                     tabBarIcon: ({ color, size, focused }) => (
