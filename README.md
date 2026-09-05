@@ -9,5 +9,5 @@ I hope this app may help the person who feel "meaningless of life" to see their 
 - [x] Diary happiness input.
 - [x] Diary happiness (history of happiness show as calendar).
 - [ ] ~~Notification to alert user to note happiness story everyday.~~
-- [ ] Streak system (How much day they have already note happiness).
+- [x] Streak system (How much day they have already note happiness).
 - [ ] Widget show the streak and alert user to note.
